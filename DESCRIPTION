@@ -3,12 +3,14 @@ Encoding: UTF-8
 Type: Package
 Title: Tools of Statistics Austria (STAT)
 Version: 0.1.1
-Date: 2016-01-15
+Date: 2016-02-11
 Authors@R: person("Gerhard", "Nachtmann",
     email = "kpm.nachtmann@gmail.com",
     role = c("aut", "cre"))
 Depends: R (>= 3.1)
 Description: Tools of Statistics Austria (STAT).
 License: GPL (>= 2)
-URL: http://www.statistik.at
+URL: http://www.statistik.at, https://github.com/nachti/STATtools
+BugReports: https://github.com/nachti/STATtools/issues
 LazyData: true
+VignetteBuilder: knitr
