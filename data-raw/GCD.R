@@ -6,10 +6,11 @@
 library(data.table)
 source("./R/left.R")
 
-gcdraw <- fread("data-raw/GCD.csv", encoding = "Latin-1")
-gcdraw
+gcdnum <- fread("data-raw/GCD.csv", encoding = "Latin-1")
+gcdnum
 
-gcdnum <- gcdraw[, lapply(.SD, left, 5)]
+gcdcols <- grep("GKZ", names(gcdnum), value = TRUE)
+gcdnum[, (gcdcols) := lapply(.SD, left, 5), .SDcols = gcdcols]
 gcdnum
 names(gcdnum)
 gcdnum[, POP20150101e := as.numeric(POP20150101e)]
@@ -45,3 +46,4 @@ gcdnum[splitgem15]
 # gcdnum <- as.data.frame(gcdnum)
 # write.csv(data/gcdnum, "gcdnum.csv", row.names = FALSE)
 save(gcdnum, file = "data/gcdnum.rda", compress = "xz")
+

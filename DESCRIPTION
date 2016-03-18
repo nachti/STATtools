@@ -2,8 +2,8 @@ Package: STATtools
 Encoding: UTF-8
 Type: Package
 Title: Tools of Statistics Austria (STAT)
-Version: 0.1.1
-Date: 2016-02-11
+Version: 0.1.2
+Date: 2016-03-18
 Authors@R: person("Gerhard", "Nachtmann",
     email = "kpm.nachtmann@gmail.com",
     role = c("aut", "cre"))
