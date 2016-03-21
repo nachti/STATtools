@@ -1,5 +1,8 @@
 .Rproj.user
 .Rhistory
 .RData
+
+## *.rda should be there, but then install_github() doesn't work
+# *.rda
 *.*~
 *~

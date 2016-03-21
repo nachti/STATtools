@@ -4,9 +4,9 @@
 ##### 20160122
 
 library(data.table)
-source("./R/left.R")
+source("../R/left.R")
 
-gcdnum <- fread("data-raw/GCD.csv", encoding = "Latin-1")
+gcdnum <- fread("GCD.csv", encoding = "Latin-1")
 gcdnum
 
 gcdcols <- grep("GKZ", names(gcdnum), value = TRUE)
@@ -44,6 +44,9 @@ gcdnum[splitgem15]
 # set(gcdnum, j = 6L, value = NULL)
 
 # gcdnum <- as.data.frame(gcdnum)
+
+if(!dir.exists("../data")){dir.create("../data")}
+
 # write.csv(data/gcdnum, "gcdnum.csv", row.names = FALSE)
-save(gcdnum, file = "data/gcdnum.rda", compress = "xz")
+save(gcdnum, file = "../data/gcdnum.rda", compress = "xz")
 
