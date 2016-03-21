@@ -1,7 +1,7 @@
 #!/usr/bin/Rscript
 ##### R-Script to create gcd data for R package
 ##### Gerhard Nachtmann
-##### 20160122
+##### 20160122-0321
 
 library(data.table)
 source("../R/left.R")
