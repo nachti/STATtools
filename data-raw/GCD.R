@@ -17,11 +17,11 @@ gcdnum[, POP20150101e := as.numeric(POP20150101e)]
 
 ### Some (5) are already duplicates in 2011
 ### reason: splitting of these municipalities
-gcdraw[, GKZ11][duplicated(gcdraw[, GKZ11])]
+gcdnum[, GKZ11][duplicated(gcdnum[, GKZ11])]
 
 ### additionally 62205 Buch-St. Magdalena (60702 + 60734)
 ### and 61120 Trofaiach	(61102 + 61103 + 61117)
-gcdraw[,GKZ13][duplicated(gcdraw[, GKZ13])]
+gcdnum[,GKZ13][duplicated(gcdnum[, GKZ13])]
 
 ## Splitting of municipalities in 2015 (GKZ11)
 splitgem15 <- gcdnum[, GKZ11][duplicated(gcdnum[, GKZ11])]
