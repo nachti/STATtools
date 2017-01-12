@@ -43,11 +43,17 @@ gcdnum[splitgem15]
 # ### alternative way to delete POP20150101e -- outdated (col nr)
 # names(gcdnum)
 # set(gcdnum, j = 6L, value = NULL)
-g17 <- fread("gem2017.csv", colClasses = "character",
-             key = "GKZ16")
-setkeyv(gcdnum, key(g17))
-gcdnum[g17, GKZ17 := GKZ17] # doesn't work yet; maybe try on or by
 
+# g17 <- fread("gem2017.csv", colClasses = "character",
+#             key = "GKZ16")
+# setkeyv(gcdnum, key(g17))
+# gcdnum[g17, GKZ17 := GKZ17]
+
+g17 <- fread("gem2017.csv", colClasses = "character")
+# gcdnum[g17, GKZ17 := GKZ17, on = "GKZ16"]
+gcdnum[g17, GKZ17 := GKZ17, on = .(GKZ16)] # same as above
+gcdnum[NA_character_, GKZ17 := GKZ16, on = "GKZ17"]
+gcdnum[GKZ16 != GKZ17, ] # ok
 
 # gcdnum <- as.data.frame(gcdnum)
 
