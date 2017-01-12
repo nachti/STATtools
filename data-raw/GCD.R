@@ -2,6 +2,7 @@
 ##### R-Script to create gcd data for R package
 ##### Gerhard Nachtmann
 ##### 20160122-0321
+##### 20170112
 
 library(data.table)
 source("../R/left.R")
@@ -39,9 +40,14 @@ gcdnum <- unique(gcdnum)
 nrow(gcdnum)
 gcdnum[splitgem15]
 
-# ### alternative way to delete POP20150101e
+# ### alternative way to delete POP20150101e -- outdated (col nr)
 # names(gcdnum)
 # set(gcdnum, j = 6L, value = NULL)
+g17 <- fread("gem2017.csv", colClasses = "character",
+             key = "GKZ16")
+setkeyv(gcdnum, key(g17))
+gcdnum[g17, GKZ17 := GKZ17] # doesn't work yet; maybe try on or by
+
 
 # gcdnum <- as.data.frame(gcdnum)
 
