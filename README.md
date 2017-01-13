@@ -15,6 +15,12 @@ devtools::install_github("nachti/STATtools")
 
 ## NEWS
 
+### 0.1.3 2017-01-13
+Updated due to disintegration of district Wien Umgebung 20170101
+Changed .Rbuildignore (included Makevars and data-raw), because
+Makevars did not work any more ...
+
+
 ### 0.1.2 2016-03-21
 added GKZ (Gemeindekennziffer) 90001 for Vienna
 data.table dependency just for building gcdnum.rda from GCD.csv,

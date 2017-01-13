@@ -17,5 +17,7 @@
 #' municipalities)
 #'   \item GKZ16: municipality codes 2016 (changes in
 #' Upper Austria)
+#'   \item GKZ17: municipality codes 2017 (changes in
+#' Lower Austria)
 #' }
 "gcdnum"
