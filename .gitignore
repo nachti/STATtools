@@ -3,6 +3,7 @@
 .RData
 
 ## If *.rda is there (in .gitignore), data.table is required
-## *.rda
+# *.rda
 *.*~
 *~
+*.*o

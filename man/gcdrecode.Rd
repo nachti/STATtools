@@ -5,9 +5,9 @@
 \alias{gcdrecode}
 \title{Recode Austrian "Gemeindecodes"}
 \usage{
-gcdrecode(year, gcd, targetyear = 2016, invalid = "NA")
+gcdrecode(year, gcd, targetyear = 2017, invalid = "NA")
 
-gcdrc(year, gcd, targetyear = 2016, ...)
+gcdrc(year, gcd, targetyear = 2017, ...)
 }
 \arguments{
 \item{year}{a character or an integer containing the year}
@@ -36,8 +36,8 @@ over the years (e.g. "Gemeindestrukturreform 2015")
 }
 \details{
 Different states for \code{gcd} are available for 2011, 2012,
-2013, 2015 and 2016 (first of January). All of them, except
-the first one, are therfore meaningful values for
+2013, 2015, 2016 and 2017 (first of January). All of them,
+except the first one, are therfore meaningful values for
 \code{targetyear}, which has to be higher than \code{year}.
 
 \code{gcdrc} is the vectorized version to be used for
@@ -97,6 +97,7 @@ of municipalities in 2013 (before splitting) respectively
 gcdrecode(2011, 62380, 2015) # warning
 gcdrecode(2011, 62380, 2017) # warning
 gcdrc(2011:2012, c(60201, 60201), 2016)
+gcdrc(2016, 32401:32424, 2017) # warning; WU ex 2017
 }
 \author{
 Gerhard Nachtmann \email{kpm.nachtmann@gmail.com}

@@ -1,5 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^data$
+^data-raw$
 ^LICENSE$
 ^\.travis\.yml$
+^src/Makevars$

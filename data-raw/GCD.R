@@ -59,6 +59,8 @@ gcdnum[GKZ16 != GKZ17, ] # ok
 
 if(!dir.exists("../data")){dir.create("../data")}
 
-# write.csv(data/gcdnum, "gcdnum.csv", row.names = FALSE)
-save(gcdnum, file = "../data/gcdnum.rda", compress = "xz")
+# write.csv(gcdnum, "../data/gcdnum.csv", row.names = FALSE)
+# save(gcdnum, file = "../data/gcdnum.rda", compress = "xz")
+# save(gcdnum, file = "data/gcdnum.rda", compress = "xz")
 
+devtools::use_data(gcdnum, compress = "xz", overwrite = TRUE)
