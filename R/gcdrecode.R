@@ -80,9 +80,13 @@
 ##' @export
 ##' @examples
 ##'
+##' ### 62380 is existing since 2015
 ##' gcdrecode(2011, 62380, 2015) # warning
-##' gcdrecode(2011, 62380, 2017) # warning
+##' gcdrecode(2011, 62380, 2015, invalid = "orig") # warning
+##' gcdrecode(2011, 62380, 2015, invalid = "wrong") # warning
+##' gcdrecode(2015, 62380, 2017) # didn't change
 ##' gcdrc(2011:2012, c(60201, 60201), 2016)
+##' ### some gcd of the sequence are not existing --> warning
 ##' gcdrc(2016, 32401:32424, 2017) # warning; WU ex 2017
 
 
@@ -187,21 +191,27 @@ gcdrc <- function(year, gcd, targetyear = 2017, ...){
     i2015 <- year == 2015
     i2016 <- year == 2016
     i2017 <- year >= 2017
-    gcdn[i2011] <- gcdrecode(2011, gcd[i2011], ...)
+    gcdn[i2011] <- gcdrecode(2011, gcd[i2011],
+                             targetyear = targetyear, ...)
     if(targetyear >= 2012){
-      gcdn[i2012] <- gcdrecode(2012, gcd[i2012], ...)
+      gcdn[i2012] <- gcdrecode(2012, gcd[i2012],
+                               targetyear = targetyear, ...)
     }
     if(targetyear >= 2013){
-      gcdn[i2013] <- gcdrecode(2013, gcd[i2013], ...)
+      gcdn[i2013] <- gcdrecode(2013, gcd[i2013],
+                               targetyear = targetyear, ...)
     }
     if(targetyear >= 2015){
-      gcdn[i2015] <- gcdrecode(2015, gcd[i2015], ...)
+      gcdn[i2015] <- gcdrecode(2015, gcd[i2015],
+                               targetyear = targetyear, ...)
     }
     if(targetyear >= 2016){
-      gcdn[i2016] <- gcdrecode(2016, gcd[i2016], ...)
+      gcdn[i2016] <- gcdrecode(2016, gcd[i2016],
+                               targetyear = targetyear, ...)
     }
     if(targetyear >= 2017){
-      gcdn[i2017] <- gcdrecode(2017, gcd[i2017], ...)
+      gcdn[i2017] <- gcdrecode(2017, gcd[i2017],
+                               targetyear = targetyear, ...)
     }
   }
   gcdn
