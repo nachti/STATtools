@@ -3,6 +3,7 @@
 ##### Gerhard Nachtmann
 ##### 20160122-0321
 ##### 20170112
+##### 20170209
 
 library(data.table)
 source("../R/left.R")
@@ -31,12 +32,12 @@ splitgem15
 setorder(gcdnum, GKZ11, GKZ12, GKZ13, -POP20150101e)
 setkey(gcdnum, GKZ11, GKZ12, GKZ13)
 nrow(gcdnum)
-nrow(unique(gcdnum))
+nrow(unique(gcdnum, by = key(gcdnum)))
 gcdnum[splitgem15]
-unique(gcdnum)[splitgem15]
+unique(gcdnum, by = key(gcdnum))[splitgem15]
 ### take the new gcd for the *bigger* parts (by population)
 ### of the gcd before splitting to be unique
-gcdnum <- unique(gcdnum)
+gcdnum <- unique(gcdnum, by = key(gcdnum))
 nrow(gcdnum)
 gcdnum[splitgem15]
 
