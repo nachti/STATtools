@@ -15,9 +15,11 @@ devtools::install_github("nachti/STATtools")
 
 ## NEWS
 
-### 0.1.4 2017-02-08
+### 0.1.4 2017-02-09
 Bugfix: took latest targetyear instead of `targetyear` argument
 given in `gcdrc()`.
+Fixed troubles due to duplicates in `gcdnum` caused by new
+version of `data.table` (unique needs `by` now) ...
 
 ### 0.1.3 2017-01-13
 Updated due to disintegration of district Wien Umgebung 20170101
