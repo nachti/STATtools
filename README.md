@@ -29,7 +29,7 @@ because `Makevars` did not work any more ...
 
 ### 0.1.2 2016-03-21
 added GKZ (Gemeindekennziffer) 90001 for Vienna
-`data.tabl`e dependency just for building `gcdnum.rda` from
+`data.table` dependency just for building `gcdnum.rda` from
 `GCD.csv`, which is not very well structured
 
 ### 0.1.1 2016-02-11
