@@ -56,6 +56,11 @@ gcdnum[g17, GKZ17 := GKZ17, on = .(GKZ16)] # same as above
 gcdnum[NA_character_, GKZ17 := GKZ16, on = "GKZ17"]
 gcdnum[GKZ16 != GKZ17, ] # ok
 
+g18 <- fread("gem2018.csv", colClasses = "character")
+gcdnum[g18, GKZ18 := i.GKZ18, on = .(GKZ17)]
+gcdnum[NA_character_, GKZ18 := GKZ17, on = .(GKZ18)]
+gcdnum[GKZ17 != GKZ18, ] # ok
+
 # gcdnum <- as.data.frame(gcdnum)
 
 if(!dir.exists("../data")){dir.create("../data")}
