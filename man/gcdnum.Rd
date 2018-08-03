@@ -25,4 +25,3 @@ A dataset containing the codes for municipalities in Austria
 from 2011 to 2016 (estimated) -- Gemeindecodes (GCD)
 }
 \keyword{datasets}
-

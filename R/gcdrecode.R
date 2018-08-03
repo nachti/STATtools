@@ -2,8 +2,8 @@
 ##' over the years (e.g. "Gemeindestrukturreform 2015")
 ##'
 ##' Different states for \code{gcd} are available for 2011, 2012,
-##' 2013, 2015, 2016 and 2017 (first of January). All of them,
-##' except the first one, are therfore meaningful values for
+##' 2013, 2015, 2016, 2017 and 2018 (first of January). All of them,
+##' except the first one, are therefore meaningful values for
 ##' \code{targetyear}, which has to be higher than \code{year}.
 ##'
 ##' \code{gcdrc} is the vectorized version to be used for
@@ -90,7 +90,7 @@
 ##' gcdrc(2016, 32401:32424, 2017) # warning; WU ex 2017
 
 
-gcdrecode <- function(year, gcd, targetyear = 2017,
+gcdrecode <- function(year, gcd, targetyear = 2018,
                       invalid = "NA"){
   ## invalid can be "NA", "orig" or sth else
   ## data("gcdnum", envir = environment()) # gcdnum must be char!
@@ -116,12 +116,12 @@ gcdrecode <- function(year, gcd, targetyear = 2017,
   if(year <= 2011) year <- 2011
   if(year == 2014) year <- 2013
   if(targetyear == 2014) targetyear <- 2013
-  validty <- c(2011, 2012, 2013, 2015, 2016, 2017)
+  validty <- c(2011, 2012, 2013, 2015, 2016, 2017, 2018)
   y <- sub(20, "GKZ", year)
   reflist <- get("gcdnum") # to avoid the NOTE
   if(!targetyear %in% validty){
-    targetyear <- 2017
-    warning(paste("Unvalid targetyear. I set it to 2017.\n",
+    targetyear <- 2018
+    warning(paste("Unvalid targetyear. I set it to 2018.\n",
                   "Possible values are",
                   paste(validty, collapse = ", ")))
   }
@@ -171,7 +171,7 @@ gcdrecode <- function(year, gcd, targetyear = 2017,
 #' @export
 #' @rdname gcdrecode
 
-gcdrc <- function(year, gcd, targetyear = 2017, ...){
+gcdrc <- function(year, gcd, targetyear = 2018, ...){
   if(is.factor(gcd)){
     gcd <- as.character(gcd)
   }
@@ -190,7 +190,8 @@ gcdrc <- function(year, gcd, targetyear = 2017, ...){
     i2013 <- year %in% 2013:2014
     i2015 <- year == 2015
     i2016 <- year == 2016
-    i2017 <- year >= 2017
+    i2017 <- year == 2017
+    i2018 <- year >= 2018
     gcdn[i2011] <- gcdrecode(2011, gcd[i2011],
                              targetyear = targetyear, ...)
     if(targetyear >= 2012){
@@ -211,6 +212,10 @@ gcdrc <- function(year, gcd, targetyear = 2017, ...){
     }
     if(targetyear >= 2017){
       gcdn[i2017] <- gcdrecode(2017, gcd[i2017],
+                               targetyear = targetyear, ...)
+    }
+    if(targetyear >= 2018){
+      gcdn[i2018] <- gcdrecode(2018, gcd[i2018],
                                targetyear = targetyear, ...)
     }
   }

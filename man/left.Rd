@@ -3,6 +3,7 @@
 \name{left}
 \alias{left}
 \alias{right}
+\alias{right}
 \title{Left- or right-most element(s)}
 \usage{
 left(x, n = 1)
@@ -33,12 +34,11 @@ Extract the \code{n} left-most (\code{left}) or right-most
   right(x)
   right(x, n = 2)
 }
-\author{
-Gerhard Nachtmann \email{kpm.nachtmann@gmail.com}
-}
 \seealso{
 \code{\link{substr}}, \code{\link{nchar}}
 }
+\author{
+Gerhard Nachtmann \email{kpm.nachtmann@gmail.com}
+}
 \keyword{left}
 \keyword{right}
-
