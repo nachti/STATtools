@@ -2,8 +2,8 @@
 ##' over the years (e.g. "Gemeindestrukturreform 2015")
 ##'
 ##' Different states for \code{gcd} are available for 2011, 2012,
-##' 2013, 2015, 2016 and 2017 (first of January). All of them,
-##' except the first one, are therfore meaningful values for
+##' 2013, 2015, 2016, 2017 and 2018 (first of January). All of them,
+##' except the first one, are therefore meaningful values for
 ##' \code{targetyear}, which has to be higher than \code{year}.
 ##'
 ##' \code{gcdrc} is the vectorized version to be used for

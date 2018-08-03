@@ -28,12 +28,11 @@ modus(y)
 modus(c(1, 1, 2, 2))
 modus(c("b", "b", "a", "a"))
 }
-\author{
-Gerhard Nachtmann \email{kpm.nachtmann@gmail.com}
-}
 \seealso{
 \code{\link{median}}, \code{\link{mean}}
 }
+\author{
+Gerhard Nachtmann \email{kpm.nachtmann@gmail.com}
+}
 \keyword{mode}
 \keyword{modus}
-
